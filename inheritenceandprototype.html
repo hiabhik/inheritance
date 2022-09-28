@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>
+      Q1.Create 2 objects - parent and child. Attach methods to parent and use
+      those methods in child object using parents prototype
+    </h4>
+    <pre>
+        
+let parent = {
+    name: "anand",
+    rollno: "a21",
+    place: "india"
+};
+
+let child = {
+    name: "golu"
+};
+
+child.__proto__ = parent;
+console.log(child.place);
+    </pre>
+
+    <h4>Q2.Write code to explain prototype chaining</h4>
+    <pre>
+        let obj1 = {
+            name: "xyz",
+            age: 15,
+            country: "usa"
+        };
+        
+        function Obj1(x){
+            this.name = x;
+        }
+        
+        let obj2 = new Obj("xyz1");
+        console.log(obj2) 
+ 
+      </pre
+    >
+
+    <h4>
+      Q3.Add a method to calculate sum of all elements in Array in array's
+      protype, use that method to calculate sum for multiple arrays
+    </h4>
+    <pre>
+        
+         let arr = new Array(1, 2, 3, 4);
+         arr.__proto__.sum = function(gArray){
+              let sum = 0;
+              for(let i of gArray){
+              sum += i;
+            }
+        return sum;
+     }
+    let a = arr.sum(arr);
+     console.log(a);
+
+        let arr2 = new Array(5, 6, 7, 8, 9);
+         let b = arr2.sum(arr2);
+         console.log(b);
+    </pre>
+
+    <h4>
+      Q4.Write a JavaScript function to retrieve all the names of object's own
+      and inherited properties.
+    </h4>
+    <pre>
+        function myprop() {
+            this.name = "x"
+            this.place = "y"
+            this.experience = 15
+            prop1.call(this)
+        }
+        
+        function prop1() {
+            this.company = "tata"
+            this.adress = "noida"
+        }
+        let hello = new myprop();
+        console.log(friend);
+        
+        let name = function(Obj){
+            for(let i in Obj){
+                console.log(i);
+            }
+        }
+        name(hello);
+    </pre>
+  </body>
+</html>
